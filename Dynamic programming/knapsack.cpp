@@ -63,13 +63,12 @@ int main() {
 
 	n = 3;
 	W = 10;
-	vector<int> w = {1,4,8};
+	vector<int> w = {1,1,3,8};
 	cout<<dp_op(W, w)<<endl;
 	// cout<<recur_opt(0,W,w)<<endl;
 
 
 
-  // std::cout << optimal_weight(W, w) << '\n';
 }
 
 void display(vector<vector<int>> v){

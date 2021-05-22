@@ -33,36 +33,25 @@ int dp_op(int capacity, vector<int> weight){
 	return store.back().back();
 }
 
-// int recur_opt(int w, int capacity, vector<int> weight, int rank, vector<vector<int>> &dp){
-// 	if(w==capacity || weight.size() == 0){
-// 		return w;
-// 	}
-// 	// int og_wsize = weight.size();
-// 	int temp, a, b;
-// 	if(w+weight[0] <=capacity){
-// 		temp = weight[0];
-// 		weight.erase(weight.begin());
-// 		if(dp[weight.size()+1][w+temp] == -1){
-// 			a = recur_opt(w+temp, capacity, weight,dp);
-// 		}
-// 		else{
-// 			a = dp[weight.size()+1][w+temp];
-// 		}
-// 		if(dp[weight.size()+1][w] == -1){
-// 			b = recur_opt(w,capacity,weight,dp);
-// 		}
-// 		else{
-// 			b = dp[weight.size()+1][w];
-// 		}
-// 		// cout<<a<<" "<<b<<endl;
-// 		// display(weight);
-// 		dp[rank][w+temp] = max(a,b);
-// 		return max(a, b);
-// 	}
-// 	return w;
+int recur_opt(int w, int capacity, vector<int> weight){
+	if(w==capacity || weight.size() == 0){
+		return w;
+	}
+	int temp, a, b;
+	for(int i=0; i<weight.size(); i++){
+		if(w+weight[i] <=capacity){
+			temp = weight[i];
+			weight.erase(weight.begin()+i);
+			a = recur_opt(w+temp, capacity, weight);
+			b = recur_opt(w,capacity,weight);
+			// cout<<a<<" "<<b<<endl;
+			// display(weight);
+			return max(a, b);
+		}
+	}
+	return w;
 
-// }
-
+}
 int main() {
 	int n, W;
 	// std::cin >> W >> n;
@@ -90,7 +79,7 @@ int main() {
 		}
 	}
 	int rank = w.size() +1;
-	// cout<<recur_opt(0,W,w,rank,dp)<<endl;
+	cout<<recur_opt(0,W,w,rank,dp)<<endl;
 
 	display(dp);
 
