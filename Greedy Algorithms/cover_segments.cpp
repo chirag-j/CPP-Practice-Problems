@@ -60,12 +60,12 @@ void findCommonPoints(vector<pair<int,int>> segment){
 
 int main(){
 	int n;
-	cin>>n;
-	vector<pair<int,int>> segment(n);
-	for(int i=0; i<n; i++){
-		cin>>segment[i].first>>segment[i].second;
-	}
-	// vector<pair<int,int>> segment = {{5,6},{2,5},{1,3},{4,7}};
+	// cin>>n;
+	// vector<pair<int,int>> segment(n);
+	// for(int i=0; i<n; i++){
+	// 	cin>>segment[i].first>>segment[i].second;
+	// }
+	vector<pair<int,int>> segment = {{5,6},{2,5},{1,3},{4,7}};
 	sort(segment.begin(), segment.end(),comSort);
 	// display(segment);
 	findCommonPoints(segment);
