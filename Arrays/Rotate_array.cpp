@@ -12,6 +12,7 @@ void display(vector<int> v){
 	}
 	cout<<endl;
 }
+// rotates an array by d
 void rotateArr(int arr[], int d, int n){
 	// vector<int> vec(arr, arr+n);
 	// for(int i=0; i<n; i++){
