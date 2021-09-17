@@ -6,6 +6,9 @@ using namespace std;
 
 void display(vector<int> v);
 
+// partition procedure to partition the array into three parts: 
+// < 𝑥 part, = 𝑥 part, and > 𝑥 part
+// m1 = start index of (==x) part and m2 is the last index of (==x) part
 vector<int> partition3(vector<int> &a, int l, int r){
   int x = a[l];
   vector<int> m = {l, l};
@@ -34,9 +37,9 @@ vector<int> partition3(vector<int> &a, int l, int r){
     // display(a);
   }
   // swap(a[l], a[m1-1]);
-  // cout<<"after partition3 ";
-  // display(a);
-  // display(m);
+  cout<<"after partition3 ";
+  display(a);
+  display(m);
   return m;
 
 }
@@ -59,7 +62,8 @@ void randomized_quick_sort(vector<int> &a, int l, int r) {
     return;
   }
 
-  int k = l + rand() % (r - l + 1);
+  // int k = l + rand() % (r - l + 1);
+  int k = l;
   swap(a[l], a[k]);
   vector<int> m = partition3(a, l, r);
 
