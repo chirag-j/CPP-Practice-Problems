@@ -72,6 +72,8 @@ int dynamicApproach(string s1,string s2){
         }
     }
     display(td_dp);
+
+    // Constructing the LCS
     int i=s1.size(), j=s2.size();
     string res = "";
     while(i!=0 || j!=0){
