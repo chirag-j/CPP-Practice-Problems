@@ -50,7 +50,7 @@ int memoization_dp(string s1, string s2, int m, int n, vector<vector<int>> &dp){
     return dp[m][n];
 }
 
-int dynamicApproach(string s1,string s2){
+int dynamicApproach(vector<int> s1,vector<int> s2){
     vector<vector<int>> td_dp(s1.size()+1);
 
     // Initialization
@@ -74,39 +74,51 @@ int dynamicApproach(string s1,string s2){
     display(td_dp);
 
     // Constructing the LCS
-    int i=s1.size(), j=s2.size();
-    string res = "";
-    while(i!=0 || j!=0){
-        if(s1[i-1] == s2[j-1]){
-            res+=s1[i-1];
-            i--;
-            j--;
-        }
-        else{
-            if(td_dp[i-1][j] > td_dp[i][j-1]){
-                i--;
-            }
-            else{
-                j--;
-            }
-        }
-    }
-    cout<<res<<endl;
+    // int i=s1.size(), j=s2.size();
+    // string res = "";
+    // while(i!=0 || j!=0){
+    //     if(s1[i-1] == s2[j-1]){
+    //         res+=s1[i-1];
+    //         i--;
+    //         j--;
+    //     }
+    //     else{
+    //         if(td_dp[i-1][j] > td_dp[i][j-1]){
+    //             i--;
+    //         }
+    //         else{
+    //             j--;
+    //         }
+    //     }
+    // }
+    // cout<<res<<endl;
 
     return td_dp.back().back();
 }
 
 int main(){
-    string s1 = "abcdaf", s2 = "acbcf";
-    cout<<recurImp(s1,s2,s1.size(), s2.size())<<endl;
-
-    vector<vector<int>> dp(s1.size()+1);
-    for(int i=0; i<=s1.size(); i++){
-        dp[i].assign(s2.size()+1, -1);
+    // string s1 = "abcdaf", s2 = "acbcf";
+    vector<int> s1, s2;
+    int m, n;
+    cin>>m;
+    s1.resize(m);
+    for(int i=0; i<m; i++){
+        cin>>s1[i];
     }
+    cin>>n;
+    s2.resize(n);
+    for(int i=0; i<n; i++){
+        cin>>s2[i];
+    }
+    // cout<<"DOne";
+    // cout<<recurImp(s1,s2,s1.size(), s2.size())<<endl;
 
-    cout<<memoization_dp(s1,s2,s1.size(), s2.size(), dp)<<endl;
-    // display(dp);
+    // vector<vector<int>> dp(s1.size()+1);
+    // for(int i=0; i<=s1.size(); i++){
+    //     dp[i].assign(s2.size()+1, -1);
+    // }
+
+    // cout<<memoization_dp(s1,s2,s1.size(), s2.size(), dp)<<endl;
 
     cout<<dynamicApproach(s1,s2);
     return 0;

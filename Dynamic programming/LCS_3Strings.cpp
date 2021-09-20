@@ -50,7 +50,27 @@ int LCS(vector<int> &s1, vector<int> &s2, vector<int> s3){
 
 int main(){
     // vector<int> s1 = {1,2,3}, s2 = {2,1,3}, s3 = {1,3,5};
-    vector<int> s1 = {8,3,2,1,7}, s2 = {8,2,1,3,8,10,7}, s3 = {6,8,3,1,4,7};
+    // vector<int> s1 = {8,3,2,1,7}, s2 = {8,2,1,3,8,10,7}, s3 = {6,8,3,1,4,7};
+    vector<int> s1, s2, s3;
+    int m, n, p;
+    cin>>m;
+    s1.resize(m);
+    for(int i=0; i<m; i++){
+        cin>>s1[i];
+    }
+    cin>>n;
+    s2.resize(n);
+    for(int i=0; i<n; i++){
+        cin>>s2[i];
+    }
+    cin>>p;
+    s3.resize(p);
+    for(int i=0; i<p; i++){
+        cin>>s3[i];
+    }
+
+
+
     dp.resize(s1.size()+1);
     for(int i=0; i<=s1.size(); i++){
         dp[i].resize(s2.size() +1);

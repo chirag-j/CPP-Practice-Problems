@@ -16,11 +16,11 @@ int edit_distance(const string &str1, const string &str2) {
 }
 
 int main() {
-	string str1;
-	string str2;
-	// string str1 = "short";
-	// string str2 = "ports";
-	std::cin >> str1 >> str2;
+	// string str1;
+	// string str2;
+	string str1 = "heap";
+	string str2 = "pea";
+	// std::cin >> str1 >> str2;
 	// std::cout << edit_distance(str1, str2) << std::endl;
 	vector<vector<int>> d ={{0}};
 	for(int i=1; i<=str1.size(); i++){
