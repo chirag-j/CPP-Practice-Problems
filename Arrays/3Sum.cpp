@@ -4,6 +4,14 @@
 
 // Notice that the solution set must not contain duplicate triplets.
 
+// Solution explanation - Use two pointers concept
+// First sort the array
+// keep -nums[i] as the required value in each iteration
+// Now keep one pointer at i+1, and 1 at the end of the array
+// if sum of values at both pointer is equal, insert into a set
+// or if it more, decrease the second pointer
+// else if it is less, increase the first pointer
+
 
 
 
@@ -13,7 +21,7 @@ public:
         // nums = {0,0,0,0};
         vector<vector<int>> result;
         result.clear();
-        set<vector<int>> setvec;
+        set<vector<int>> setvec;        //set will store the unique vectors, provided they are sorted
         // unordered_set<vector<int>, >
         sort(nums.begin(), nums.end());
         // return {nums};

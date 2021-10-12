@@ -7,6 +7,9 @@ using namespace std;
 // If no such indices exists, return false.
 
 // best Solution
+// Generate a right_max array which is made by iterating from right to left and storing the max upto that iteration
+// now iterate from start, maintain an int leftMin which stores the min obtained till now
+// if any iteration gives number more than leftMin and more than right_max[i], return true;
 bool increasingTriplet(vector<int>& nums) {
     int c1 = INT_MAX, c2 = INT_MAX;
     for (int x : nums) {

@@ -1,7 +1,7 @@
 // QUestion : Given an array of integers nums and an integer k, 
 // return the total number of continuous subarrays whose sum equals to k.
 
-//generate cumulative_sum search for an older sum and subtract to see if it matches target
+// generate cumulative_sum search for an older sum and subtract to see if it matches target
 class Solution {
 public:
     int subarraySum(vector<int>& nums, int k) {
