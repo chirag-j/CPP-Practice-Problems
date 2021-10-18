@@ -21,7 +21,7 @@ int dp_op(int capacity, vector<int> weight){
 		for(int j=1; j<=capacity; j++){
 			store[i].push_back(store[i-1][j]);
 			if(weight[i-1]<=j){
-				temp = store[i-1][j-weight[i-1]] + weight[i-1];
+				temp = store[i-1][j-weight[i-1]] + 0];
 				if(temp>store[i][j]){
 					store[i][j] = temp;
 				}

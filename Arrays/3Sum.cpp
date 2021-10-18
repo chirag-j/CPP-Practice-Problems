@@ -8,8 +8,8 @@
 // First sort the array
 // keep -nums[i] as the required value in each iteration
 // Now keep one pointer at i+1, and 1 at the end of the array
-// if sum of values at both pointer is equal, insert into a set
-// or if it more, decrease the second pointer
+// if 
+// or if it more, decrease the second posum of values at both pointer is equal, insert into a setinter
 // else if it is less, increase the first pointer
 
 

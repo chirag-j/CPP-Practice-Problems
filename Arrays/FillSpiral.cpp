@@ -25,6 +25,7 @@ public:
         x++;
         while(true){
             cout<<pos[0]<<" "<<pos[1]<<endl;
+            // Previous direction is given preference
             if(inlimit(pos, dir, n) && mat[pos[0]+dir[0]][pos[1] + dir[1]] == -1){
                 pos[0]+=dir[0];
                 pos[1]+=dir[1];

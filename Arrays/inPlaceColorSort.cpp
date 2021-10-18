@@ -3,6 +3,9 @@
 
 // We will use the integers 0, 1, and 2 to represent the color red, white, and blue, respectively.
 
+// approach
+// Used quicksort on element value "1", because if all 1's are in correct position, 
+// it implies that 0  and 2's are also correctly positioned
 
 #include<iostream>
 #include<vector>
@@ -21,7 +24,7 @@ void display(vector<T> v){
 }
 
 void sortColors(vector<int>& nums) {
-    int m=0, n=0;
+    int m=0, n=0;       // m is the start index of 1's, n is 1+lastIndex of 1's.
     for(int i=0; i<nums.size(); i++){
         if(nums[i] < 1){
             if(n==i){

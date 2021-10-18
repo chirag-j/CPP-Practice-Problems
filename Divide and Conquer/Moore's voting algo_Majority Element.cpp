@@ -1,3 +1,5 @@
+// majority element is one which occurs strictly more than half the length of array
+
 int majorityElement(vector<int>& nums) {
     int ansIndex = 0;
     int count = 1;

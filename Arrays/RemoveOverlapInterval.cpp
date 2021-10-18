@@ -5,7 +5,9 @@
 // my approach (Failed - TLE) :custom sort based on 0th element
 // recursively remove both elements, one at a time if they overlap, increase score by 1
 
-// foun
+// best method : greedy approach
+// sort by 0th element
+// Go one pass: if any two overlap remove the one with larger end interval
 
 #include<iostream>
 #include<vector>
@@ -76,44 +78,28 @@ int main(){
 
 
 //////////
-template<class T>
-void display(vector<T> v){
-    for(int i=0; i<v.size(); i++){
-        cout<<v[i]<<" ";
-    }
-    cout<<endl;
-}
+// bool mycomp(vector<int> &a, vector<int> &b){
+//     return (a[0]<b[0]);
+// }
 
-
-bool compFunc(vector<int> a, vector<int> b){
-    return a[0]<b[0];
-}
-
-
-class Solution {
-public:
-    int eraseOverlapIntervals(vector<vector<int>>& intervals) {
-        // vector<bool> present(intervals.size(), true);
-        sort(intervals.begin(), intervals.end(), compFunc);
-        // for(int i=0; i<intervals.size(); i++){
-        //     display(intervals[i]);
-        // }
+// class Solution {
+// public:
+    
+//     int eraseOverlapIntervals(vector<vector<int>>& intervals) {
+//         int n = intervals.size();
+//         sort(intervals.begin(), intervals.end(), mycomp);
         
-        int score = 0;
-        int last = intervals[0][1];
-        for(int i=1; i<intervals.size(); i++){
-            if(intervals[i][0] < last){
-                last = min(intervals[i][1], last);
-                score++;
-            }
-            else{
-                last = intervals[i][1];
-            }
-            
-        }
-        return score;
-        // cout<<overlaps({1,2}, {2,6});
-        // return eraseOverlaps(intervals, present, 0, 0);
+//         int res = 0;
+//         int las = intervals[0][1];
         
-    }
-};
+//         for(int i = 1; i < n; i++) {
+//             if(intervals[i][0] < las){
+//                 las = min(intervals[i][1], las);
+//                 res++;
+//             }
+//             else las = intervals[i][1];
+//         }
+        
+//         return res;
+//     }
+// };

@@ -33,24 +33,17 @@ int dp_op(int capacity, vector<int> weight){
 	return store.back().back();
 }
 
-int recur_opt(int w, int capacity, vector<int> weight){
-	if(w==capacity || weight.size() == 0){
-		return w;
+int recur_opt(int x, int capacity, vector<int> &weight, vector<vector<int>> &dp){
+	if(dp[x][capacity] != -1){return dp[x][capacity];}
+	if(x<=0 || weight.size() == 0 || capacity==0){
+		return 0;
 	}
-	int temp, a, b;
-	for(int i=0; i<weight.size(); i++){
-		if(w+weight[i] <=capacity){
-			temp = weight[i];
-			weight.erase(weight.begin()+i);
-			a = recur_opt(w+temp, capacity, weight);
-			b = recur_opt(w,capacity,weight);
-			// cout<<a<<" "<<b<<endl;
-			// display(weight);
-			return max(a, b);
-		}
+	int temp = 0;
+	if(capacity>=weight[x-1]){
+		temp = recur_opt(x-1,capacity-weight[x-1], weight, dp) + weight[x-1];
 	}
-	return w;
-
+	dp[x][capacity] = max(temp, recur_opt(x-1,capacity,weight,dp));
+	return dp[x][capacity];
 }
 int main() {
 	int n, W;
@@ -61,27 +54,20 @@ int main() {
 	// }
 
 	n = 3;
-	W = 10;
+	W = 23;
 	// vector<pair<int,int>> w = {{0,0},{1,1},{2,4},{3,8}};
-	vector<int> w = {1,4,8};
+	vector<int> w = {1,4,8,12};
 	// cout<<dp_op(W, w)<<endl;
 
 	vector<vector<int>> dp(w.size() +1);
 	for(int i=0; i<dp.size(); i++){
-		for(int j=0; j<=W; j++){
-			if(i==0 || j==0){
-				dp[i].push_back(0);
-
-			}
-			else{
-				dp[i].push_back(-1);
-			}
-		}
+		dp[i].assign(W+1, -1);
 	}
-	int rank = w.size() +1;
-	cout<<recur_opt(0,W,w,rank,dp)<<endl;
+	dp[0][0] = 1;
+	cout<<recur_opt(w.size(),W,w,dp)<<endl;
 
 	display(dp);
+	cout<<dp_op(W, w)<<endl;
 
   // std::cout << optimal_weight(W, w) << '\n';
 }

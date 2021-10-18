@@ -1,4 +1,8 @@
 // Note = Longest Palindrome Subsequnce is DP
+// This is not
+// approach
+// 
+
 #include<iostream>
 #include<vector>
 #include<string>
