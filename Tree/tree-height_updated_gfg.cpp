@@ -76,3 +76,26 @@ int main(){
 
 	return 0;
 }
+
+// GFG 22-10-2021
+//Function to find the height of a binary tree.
+// int height(struct Node* node)
+// {
+//     if(node->right == NULL && node->left == NULL){
+//         return 1;
+//     }
+//     if(node->right == NULL){
+//         return height(node->left) +1;
+//     }
+//     if(node->left == NULL){
+//         return height(node->right) +1;
+//     }
+//     int a = height(node->left) +1;
+//     int b = height(node->right) +1;
+//     if(a>b){
+//         return a;
+//     }
+//     return b;
+//     //code here
+    
+// }

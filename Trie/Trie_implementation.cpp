@@ -1,6 +1,8 @@
 // Trie -- Very useful data structure to store multiple strings
 // enables very efficient prefix search, and whole word searches
 // Time complexity of all operations is O(L), where L is the length of the word
+// There are various applications. eg: autocomplete and spellchecker.
+
 
 #include<iostream>
 #include<vector>
@@ -73,7 +75,7 @@ int main(){
     for(int i=0; i<inp.size(); i++){
         myTrie.insert(inp[i]);
     }
-    
+
     cout<<myTrie.startsWith("cd")<<endl;
     cout<<myTrie.search("abgl")<<endl;
 
