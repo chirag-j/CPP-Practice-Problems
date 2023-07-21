@@ -14,7 +14,7 @@ using namespace std;
 
 // resulting count = less[0]*greater[1] + less[1]*greater[0]
 
-A team is valid if: (rating[i] < rating[j] < rating[k]) or (rating[i] > rating[j] > rating[k]) where (0 <= i < j < k < n).
+// A team is valid if: (rating[i] < rating[j] < rating[k]) or (rating[i] > rating[j] > rating[k]) where (0 <= i < j < k < n).
 int numTeams(vector<int>& rating) {
     int count = 0;
     for(int i=1; i<rating.size(); i++){

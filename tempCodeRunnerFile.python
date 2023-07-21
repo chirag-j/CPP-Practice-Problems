@@ -1,0 +1,8 @@
+# with open("sbi_dc_jan.txt") as f:
+#     data = f.read()
+
+# data = data.split('\n')
+# identifiers = ['Swiggy', ]
+
+# for line 
+print("UPI/CR/302118480933/Swiggy/UTIB/swiggy.ref/Refund".lower())
